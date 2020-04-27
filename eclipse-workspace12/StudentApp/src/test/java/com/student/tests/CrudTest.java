@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import com.github.javafaker.Faker;
 import com.student.requests.RequestFactory;
 import com.student.specs.SpecificationFactory;
+import com.student.tags.Regression;
+import com.student.tags.Smoke;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
@@ -19,6 +22,7 @@ public class CrudTest extends TestBase{
 	
 	RequestFactory requests = new RequestFactory();
 	
+	@Category(Smoke.class)
 	@Story("This is a CRUD testing story")
 	@DisplayName("This is a test to get all students from the database")
 	@Feature("This is a test to get all students from the database")
@@ -34,6 +38,7 @@ public class CrudTest extends TestBase{
 		
 	}
 	
+	@Category(Regression.class)
 	@Story("This is a CRUD testing story")
 	@DisplayName("Test to create and verify a new student")
 	@Feature("Test to create and verify a new student")
